@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Customer;
 use App\Http\Requests\StoreCustomerRequest;
 use App\Http\Requests\UpdateCustomerRequest;
+use App\Http\Resources\CustomerResource;
+use Pest\ArchPresets\Custom;
 
 class CustomerController extends Controller
 {
@@ -13,7 +15,24 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        //
+
+        return Customer::paginate(5);
+
+    //     $customer = Customer::with(['invoices' => function ($query) {
+    //         $query->where('status', 'billed');
+    //     }])->where('id', 15)->first();
+
+    //     if (!$customer) {
+    //         return response()->json([
+    //             'status' => false,
+    //             'message' => 'Customer not found'
+    //         ], 404);
+    //     }
+
+    //     return response()->json([
+    //         'status' => true,
+    //         'data' => $customer
+    //     ],200);
     }
 
     /**
@@ -37,7 +56,7 @@ class CustomerController extends Controller
      */
     public function show(Customer $customer)
     {
-        //
+        return new CustomerResource($customer);
     }
 
     /**

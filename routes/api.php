@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ConnectedAccountController;
+use App\Http\Controllers\CustomerController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PaymentController;
@@ -26,3 +27,6 @@ Route::get('account-refresh', [ConnectedAccountController::class, 'refreshAccoun
 Route::get('show-account', [ConnectedAccountController::class, 'showAccount'])->name('show-update');
 Route::post('accounts/{accountId}', [ConnectedAccountController::class, 'updateAccount'])->name('account-update');
 Route::delete('delete-accounts/{accountId}', [ConnectedAccountController::class, 'deleteAccount'])->name('account-delete');
+
+
+Route::apiResource('customers',CustomerController::class);
