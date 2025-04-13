@@ -19,7 +19,7 @@ class PaymentController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'amount'     => 'required',
-            'payment_method' => 'required|string',
+            // 'payment_method' => 'required|string',
         ]);
 
         if ($validator->fails()) {
@@ -39,9 +39,10 @@ class PaymentController extends Controller
             $paymentIntent = PaymentIntent::create([
                 'amount'         => $amount,
                 'currency'       => 'usd',
-                'payment_method' => $request->payment_method,
+                // 'payment_method' => $request->payment_method,
                 // 'confirmation_method' => 'manual',
-                'confirm'        => false,
+                // 'confirm'        => true,
+                'automatic_payment_methods' => ['enabled' => true],
             ]);
 
             return response()->json([

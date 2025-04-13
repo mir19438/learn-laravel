@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PdfController;
 use App\Http\Controllers\StripePaymentController;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Route;
@@ -43,3 +44,11 @@ Route::get('/delete-cookie', function () {
     Cookie::queue(Cookie::forget('language'));
     return 'Cookie deleted!';
 });
+
+
+// pdf
+
+Route::get('/pdf/show', [PdfController::class, 'show']);
+Route::get('/pdf/download', [PdfController::class, 'download']);
+Route::get('/pdf/store', [PdfController::class, 'store']);
+Route::get('/pdf/show/{id}', [PdfController::class, 'viewStored']);
