@@ -38,9 +38,11 @@ return [
     'stripe' => [
         'secret' => env('STRIPE_SECRET'),
         'public' => env('STRIPE_PUBLIC'),
-    ]
+    ],
 
-
-
-
+    'twilio' => [
+        'sid' => env('TWILIO_SID'),
+        'token' => env('TWILIO_AUTH_TOKEN'),
+        'from' => env('TWILIO_PHONE_NUMBER'),
+    ],
 ];

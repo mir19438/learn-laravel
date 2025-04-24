@@ -11,10 +11,14 @@
     "require": {
         "php": "^8.2",
         "barryvdh/laravel-dompdf": "^3.1",
+        "guzzlehttp/guzzle": "*",
         "laravel/framework": "^12.0",
-        "laravel/sanctum": "^4.0",
+        "laravel/sanctum": "^4.1",
         "laravel/tinker": "^2.10.1",
-        "stripe/stripe-php": "^16.6"
+        "laravel/vonage-notification-channel": "*",
+        "stripe/stripe-php": "^16.6",
+        "twilio/sdk": "^8.5",
+        "vonage/client": "^4.1"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
