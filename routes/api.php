@@ -65,3 +65,15 @@ use App\Http\Controllers\Subscribtions\SubPayment;
         Route::post('/checkout/{id}',[SubPayment::class, 'checkout']);
         Route::post('/plan',[PlanController::class, 'createPlan']);
     });
+
+    Route::get('/checkout-success',[SubPayment::class,'success'])->name('checkout-success');
+    Route::get('/checkout-cancel',[SubPayment::class,'cancel'])->name('checkout-cancel');
+
+
+
+    Route::get('/subscription/{id}',[SubPayment::class,'getSubscription']);
+    Route::get('/invoice/{id}',[SubPayment::class,'getInvoice']);
+    Route::get('/get-subscription-of-customer/{id}',[SubPayment::class,'getSubscriptionOfCustomer']);
+
+
+    Route::get('/cancel-subscription-now/{id}',[SubPayment::class,'cancelSubscriptionNow']);

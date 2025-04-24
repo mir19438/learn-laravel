@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('referral_code')->nullable();
             $table->string('stripe_connect_id')->nullable();
             $table->string('role')->default('user');
+            $table->integer('plan_id')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
