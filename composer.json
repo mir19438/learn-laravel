@@ -11,11 +11,14 @@
     "require": {
         "php": "^8.2",
         "barryvdh/laravel-dompdf": "^3.1",
+        "geocoder-php/geocoder-extra": "^1.4",
         "guzzlehttp/guzzle": "*",
         "laravel/framework": "^12.0",
         "laravel/sanctum": "^4.1",
         "laravel/tinker": "^2.10.1",
         "laravel/vonage-notification-channel": "*",
+        "spatie/geocoder": "^3.16",
+        "stevebauman/location": "^7.5",
         "stripe/stripe-php": "^16.6",
         "twilio/sdk": "^8.5",
         "vonage/client": "^4.1"

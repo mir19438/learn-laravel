@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ConnectedAccountController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\MapController;
 use App\Http\Controllers\PaymentController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -77,3 +78,7 @@ use App\Http\Controllers\Subscribtions\SubPayment;
 
 
     Route::get('/cancel-subscription-now/{id}',[SubPayment::class,'cancelSubscriptionNow']);
+
+
+// location
+Route::get('/map', [MapController::class, 'showMap']);

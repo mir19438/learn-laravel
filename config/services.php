@@ -45,4 +45,8 @@ return [
         'token' => env('TWILIO_AUTH_TOKEN'),
         'from' => env('TWILIO_PHONE_NUMBER'),
     ],
+    
+    'geocoder' => [
+        'api_key' => env('GOOGLE_MAPS_API_KEY'),
+    ],
 ];
